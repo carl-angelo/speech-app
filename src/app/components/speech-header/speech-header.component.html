@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark navbar-expand-md bg-dark justify-content-between">
+  <div class="container">
+    <a class="navbar-brand">Speech App</a>
+    <button class="navbar-toggler show-sm" (click)="addShow = !addShow" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{'show': addShow}" id="navbarSupportedContent">
+      <ul class="nav">
+        <li class="nav-item" [ngClass]="{'active': selected === 0}" >
+          <a class="nav-link" (click)="setLocation(0)">View</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active': selected === 1}">
+          <a class="nav-link" (click)="setLocation(1)">Create</a>
+        </li>
+        <li class="nav-item ml-2">
+          <div class="form-inline">
+            <input class="form-control mr-sm-2" [(ngModel)]="searchKeyword" type="search" placeholder="Search" aria-label="Search" [disabled]="selected === 1">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="button" [disabled]="selected === 1" (click)="searchSubmit()">Search</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

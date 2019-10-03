@@ -1,0 +1,10 @@
+<ul class="list-group mt-3">
+  <li class="list-group-item" *ngFor="let data of speechList; let i = index">
+    <a (click)="selectUser(data, i)"
+      [ngClass]="{
+        'no-click': disableClick,
+        'click': !disableClick,
+        'active': selectedList === i
+      }"> {{ data.subject }} </a>
+  </li>
+</ul>

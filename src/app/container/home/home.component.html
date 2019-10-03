@@ -1,0 +1,19 @@
+<app-speech-header (location)="handleSelectedLocation($event)" (search)="handleSearch($event)"></app-speech-header>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-3 col-lg-3 col-sm-12">
+      <app-speech-list
+        [disableClick]="hideSpeechList"
+        [speechList]="speechList"
+        (selectedUser)="handleSelectedUser($event)"></app-speech-list>
+    </div>
+    <div class="col-xl-9 col-lg-9 col-sm-12">
+      <app-speech-form
+        [disableForm]="disableForm"
+        [selectedView]="selectedView"
+        [hideSpeechList]="hideSpeechList"
+        (deleteRecord)="confirmDelete($event)"
+        (speechFormData)="handleSpeechFormData($event)"></app-speech-form>
+    </div>
+  </div>
+</div>
